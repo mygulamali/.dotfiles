@@ -1,6 +1,17 @@
 [user]
-	name = Murtaza Gulamali
-	email = mygulamali@gmail.com
+    name = Murtaza Gulamali
+    email = mygulamali@gmail.com
 [github]
-	user = mygulamali
-	token = c6ff38a913923eb47f1e68cba5a1efaa
+    user = mygulamali
+    token = c6ff38a913923eb47f1e68cba5a1efaa
+[rerere]
+    enabled = 1
+[branch]
+    autosetuprebase = always
+[push]
+    default = tracking
+[alias]
+    co = checkout
+    c = commit
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+    s = status
