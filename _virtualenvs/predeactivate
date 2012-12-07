@@ -1,0 +1,18 @@
+#!/bin/bash
+# This hook is run before every virtualenv is deactivated.
+
+cd $PROJECT_DIR/`basename $VIRTUAL_ENV`
+
+if [ -f development.env ]; then
+    for var in `awk '/(^|[^#])export .+=.+/' development.env | cut -d'=' -f 1 | cut -d' ' -f 2`; do
+        unset $var
+    done
+    for var in `awk '/(^|[^#])alias .+=.+/' development.env | cut -d'=' -f 1 | cut -d' ' -f 2`; do
+        unalias $var
+    done
+    for var in `awk '/(^|[^#])function /' development.env | cut -d' ' -f 2`; do
+        unset -f $var
+    done
+fi
+
+cd - > /dev/null
