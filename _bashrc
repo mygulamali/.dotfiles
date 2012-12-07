@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # source global definitions
 [[ -f /etc/bashrc ]] && . /etc/bashrc
 
@@ -43,19 +45,23 @@ else
     export PS1="\u@\h \W $(parse_git_branch)\n\\$ "
 fi
 
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
 # pythonbrew (https://github.com/utahta/pythonbrew)
-[[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
+[[ -s "${HOME}/.pythonbrew/etc/bashrc" ]] && source "${HOME}/.pythonbrew/etc/bashrc"
 pythonbrew switch 2.7.2
 
 # virtualenvwrapper
-source "$HOME/.pythonbrew/pythons/Python-2.7.2/bin/virtualenvwrapper.sh"
+source "${HOME}/.pythonbrew/pythons/Python-2.7.2/bin/virtualenvwrapper.sh"
 
 # minimise pip downloads
-export PIP_DOWNLOAD_CACHE="$HOME/.pip/cache"
+export PIP_DOWNLOAD_CACHE="${HOME}/.pip/cache"
 [[ ! -d $PIP_DOWNLOAD_CACHE ]] && mkdir -p $PIP_DOWNLOAD_CACHE
 
 # rvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+[[ -s "${HOME}/.rvm/scripts/rvm" ]] && source "${HOME}/.rvm/scripts/rvm"
 
 # rails
 export RAILS_ENV=development
@@ -67,17 +73,12 @@ if [ -d ${NODE_HOME} ]; then
     export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${NODE_HOME}/lib
 fi
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
 # the one true editor
 export EDITOR=emacs
-if [ -x /usr/local/bin/emacs ]; then
-    alias emacs='/usr/local/bin/emacs'
-fi
+[[ -x /usr/local/bin/emacs ]] && alias emacs="/usr/local/bin/emacs"
+
+# project directory (used by virtualenvs)
+export PROJECT_DIR="${HOME}/Projects"
 
 # add personal bin directory (this should always be at the end)
-if [ -d ${HOME}/bin ]; then
-    export PATH=${HOME}/bin:${PATH}
-fi
+[[ -d "${HOME}/bin" ]] && export PATH="${HOME}/bin":${PATH}
