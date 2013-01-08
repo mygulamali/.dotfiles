@@ -75,7 +75,10 @@ fi
 
 # the one true editor
 export EDITOR=emacs
-[[ -x /usr/local/bin/emacs ]] && alias emacs="/usr/local/bin/emacs"
+if [ -x /usr/local/bin/emacs ]; then
+    alias emacs="/usr/local/bin/emacs"
+    export EDITOR="/usr/local/bin/emacs"
+fi
 
 # project directory (used by virtualenvs)
 export PROJECT_DIR="${HOME}/Projects"
