@@ -1,0 +1,49 @@
+# From: http://reyhan.org/2012/12/how-to-irssi.html
+
+servers = (
+  {
+    address = "irc.freenode.net";
+    chatnet = "freenode";
+    port = "6667";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "yes";
+  }
+);
+ 
+chatnets = {
+  Freenode = {
+    type = "IRC";
+    autosendcmd = "/msg nickserv identify tstark password1";
+  };
+};
+ 
+channels = (
+  {
+    name = "#test-channel";
+    chatnet = "Freenode";
+    autojoin = "Yes";
+  }
+  {
+    name = "#private-test-channel";
+    chatnet = "Freenode";
+    password = "password1";
+    autojoin = "Yes";
+  }
+);
+ 
+settings = {
+  core = {
+    real_name = "Tony Stark";
+    user_name = "tstark";
+    nick = "tstark";
+  };
+  "fe-text" = {
+    actlist_sort = "refnum";
+    term_force_colors = "yes";
+    scrollback_time = "7day ";
+  };
+  "fe-common/core" = {
+    theme = "default";
+  };
+};
