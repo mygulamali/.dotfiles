@@ -83,5 +83,8 @@ fi
 # project directory (used by virtualenvs)
 export PROJECT_DIR="${HOME}/Projects"
 
+# git-hooks (https://github.com/icefox/git-hooks)
+[[ -d ${PROJECT_DIR}/git-hooks ]] && export PATH=${PATH}:${PROJECT_DIR}/git-hooks
+
 # add personal bin directory (this should always be at the end)
-[[ -d "${HOME}/bin" ]] && export PATH="${HOME}/bin":${PATH}
+[[ -d ${HOME}/bin ]] && export PATH=${HOME}/bin:${PATH}
