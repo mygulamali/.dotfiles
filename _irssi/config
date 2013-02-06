@@ -16,8 +16,8 @@ servers = (
   {
     address = "chat.freenode.net";
     chatnet = "Freenode";
-    port = "6667";
-    use_ssl = "no";
+    port = "6697";
+    use_ssl = "yes";
     ssl_verify = "no";
     autoconnect = "yes";
   }
@@ -278,9 +278,26 @@ settings = {
   };
   "fe-common/core" = {
     theme = "default";
-    use_status_window = "no";
-    autocreate_windows = "no";
-    autoclose_windows = "no";
+    use_status_window = "yes";
+    autocreate_windows = "yes";
+    autoclose_windows = "yes";
     reuse_unused_windows = "yes";
   };
 };
+
+hilights = (
+  {
+    text = "mygulamali";
+    color = "%Y";
+    nick = "yes";
+    word = "yes";
+    fullword = "yes";
+  },
+  {
+    text = "murtaza";
+    color = "%Y";
+    nick = "yes";
+    word = "yes";
+    fullword = "yes";
+  }
+);
