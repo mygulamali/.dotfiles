@@ -20,7 +20,7 @@ unalias -a
 alias ls='ls -Gp'
 alias ll='ls -aFhl'
 alias psa='ps aux'
-alias grep='grep -n --color=auto'
+alias grep='grep -nI --color=auto'
 alias pingg='ping -c 3 www.google.com'
 
 # function to get current branch if PWD is a git repo
