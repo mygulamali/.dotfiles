@@ -66,6 +66,12 @@ export PIP_DOWNLOAD_CACHE="${HOME}/.pip/cache"
 # rails
 export RAILS_ENV=development
 
+# npm
+if [ -d /usr/local/share/npm ]; then
+    export PATH=${PATH}:/usr/local/share/npm/bin
+    export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/share/npm/lib
+fi
+
 # add node.js build
 export NODE_HOME=${HOME}/Projects/node
 if [ -d ${NODE_HOME} ]; then

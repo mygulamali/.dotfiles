@@ -45,22 +45,26 @@
 (setq require-final-newline 'query)
 
 ;; refresh using F5
-;; http://www.stokebloke.com/wordpress/2008/04/17/emacs-refresh-f5-key/
-(global-set-key [f5]
-  '(lambda() "Refresh the buffer from the disk (prompt if modified)."
-    (interactive)
-    (revert buffer t (not (buffer-modified-p)) t)
-  )
-)
+;; http://tsengf.blogspot.co.uk/2011/06/bind-f5-to-revert-buffer-in-emacs.html
+(global-set-key [f5] '(lambda () (interactive) (revert-buffer nil t nil)))
 
 ;; ido
 (require 'ido)
+(ido-mode t)
 
 ;; python-mode
 ;(add-to-list 'load-path "~/.emacs.d/plugins/python-mode.el-6.0.7/") 
 ;(setq py-install-directory "~/.emacs.d/plugins/python-mode.el-6.0.7/")
 ;(require 'python-mode)
 ;(setq-default py-indent-offset 4)
+
+;; powerline
+;; https://github.com/milkypostman/powerline
+(require 'powerline)
+(powerline-default)
+
+;; http://www.emacswiki.org/emacs/SupportBiDi
+(setq-default bidi-display-reordering t)
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
