@@ -18,6 +18,7 @@
 ;; line numbering
 (global-linum-mode 1)
 (setq linum-format "%d ")
+(global-set-key [f3] 'linum-mode)
 
 ;; enable deletion of entire regions
 (setq delete-selection-mode t)
