@@ -16,3 +16,5 @@ if [ -f development.env ]; then
 fi
 
 cd - > /dev/null
+export PYTHONPATH=$OLD_PYTHONPATH
+unset OLD_PYTHONPATH
