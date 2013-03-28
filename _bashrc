@@ -23,6 +23,18 @@ alias psa='ps aux'
 alias grep='grep -nI --color=auto'
 alias pingg='ping -c 3 www.google.com'
 
+# git aliases
+alias g='git'
+alias ga='git add'
+alias gs='git status'
+alias gc='git commit'
+
+# function to pull master and then go back to your current branch
+function pullmaster {
+    current=$(git symbolic-ref HEAD 2> /dev/null) || return
+    git checkout master && git pull && git checkout ${current#refs/heads/}
+}
+
 # function to get current branch if PWD is a git repo
 function parse_git_branch {
     ref=$(git symbolic-ref HEAD 2> /dev/null) || return
