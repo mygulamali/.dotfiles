@@ -20,8 +20,13 @@ unalias -a
 alias ls='ls -Gp'
 alias ll='ls -aFhl'
 alias psa='ps aux'
-alias grep='grep -nI --color=auto'
 alias pingg='ping -c 3 www.google.com'
+
+# grep aliases
+alias grep='grep -nI --color=auto'
+alias greppy='grep -r --include=*.py'
+alias grepjs='grep -r --include=*.js'
+alias grepml='grep -r --include=*.html'
 
 # git aliases
 alias g='git'
