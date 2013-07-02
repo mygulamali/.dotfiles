@@ -30,9 +30,6 @@ alias grepml='grep -r --include=*.html'
 
 # git aliases
 alias g='git'
-alias ga='git add'
-alias gs='git status'
-alias gc='git commit'
 
 # function to pull master and then go back to your current branch
 function pullmaster {
@@ -45,6 +42,18 @@ function parse_git_branch {
     ref=$(git symbolic-ref HEAD 2> /dev/null) || return
     echo "("${ref#refs/heads/}")"
 }
+
+# function to complete fab commands using TAB
+# https://github.com/adamv/dotfiles/blob/master/completion_scripts/fab_completion.bash
+#fab_completion() {
+#    COMPREPLY=()
+#    /usr/bin/which -s fab || return 0
+#    [[ -f fabfile.py || -d fabfile ]] || return 0
+#    local cur="${COMP_WORDS[COMP_CWORD]}"
+#    tasks=$(fab --shortlist)
+#    COMPREPLY=( $(compgen -W "${tasks}" -- ${cur}) )
+#}
+#complete -F fab_completion fab
 
 # command line prompt
 if [ $(tput colors) -ge 8 ]; then
