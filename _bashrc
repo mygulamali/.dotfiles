@@ -76,23 +76,24 @@ fi
 shopt -s checkwinsize
 
 # ensure /usr/local/bin is always before /usr/bin
-export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
-# pythonbrew (https://github.com/utahta/pythonbrew)
-[[ -s "${HOME}/.pythonbrew/etc/bashrc" ]] && source "${HOME}/.pythonbrew/etc/bashrc"
-pythonbrew switch 2.7.2
+# pyenv (https://github.com/yyuu/pyenv)
+export PATH=$HOME/.pyenv/bin:$PATH
+eval "$(pyenv init -)"
+pyenv global 2.7.3
 
 # virtualenvwrapper
-source "${HOME}/.pythonbrew/pythons/Python-2.7.2/bin/virtualenvwrapper.sh"
+source "${HOME}/.pyenv/versions/2.7.3/bin/virtualenvwrapper.sh"
 
 # minimise pip downloads
 export PIP_DOWNLOAD_CACHE="${HOME}/.pip/cache"
 [[ ! -d $PIP_DOWNLOAD_CACHE ]] && mkdir -p $PIP_DOWNLOAD_CACHE
 
-# rvm
-PATH=$PATH:$HOME/.rvm/bin
-[[ -s "${HOME}/.rvm/scripts/rvm" ]] && source "${HOME}/.rvm/scripts/rvm"
-rvm use 1.9.3
+# rbenv (https://github.com/sstephenson/rbenv)
+export PATH=$HOME/.rbenv/bin:$PATH
+eval "$(rbenv init -)"
+rbenv global 1.9.3-p448
 
 # rails
 export RAILS_ENV=development
@@ -112,10 +113,6 @@ fi
 
 # the one true editor
 export EDITOR=emacs
-if [ -x /usr/local/bin/emacs ]; then
-    alias emacs="/usr/local/bin/emacs"
-    export EDITOR="/usr/local/bin/emacs"
-fi
 
 # project directory (used by virtualenvs)
 export PROJECT_DIR="${HOME}/Projects"
