@@ -35,11 +35,11 @@
 (setq diff-switches "-u")
 
 ;; set tabs
-(setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
-;(setq-default indent-line-function 'insert-tab)
-(global-set-key (kbd "TAB") 'tab-to-tab-stop)
-(setq-default tab-stop-list (number-sequence 4 256 4))
+(setq-default tab-width 4)
+(setq-default indent-line-function 'insert-tab)
+;(global-set-key (kbd "TAB") 'tab-to-tab-stop)
+;(setq-default tab-stop-list (number-sequence 4 256 4))
 (define-key function-key-map [iso-lefttab] [backtab])
 
 ;; always end a file with a newline
