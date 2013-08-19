@@ -6,6 +6,10 @@
 (add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "~/.emacs.d/plugins/")
 
+;; disable startup message/splash
+(setq inhibit-splash-screen t)
+(setq inhibit-startup-message t)
+
 ;; remove that menu bar
 (menu-bar-mode -1)
 
