@@ -81,10 +81,10 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # pyenv (https://github.com/yyuu/pyenv)
 export PATH=$HOME/.pyenv/bin:$PATH
 eval "$(pyenv init -)"
-pyenv global 2.7.4
+pyenv global 2.7.5
 
 # virtualenvwrapper
-source "${HOME}/.pyenv/versions/2.7.4/bin/virtualenvwrapper.sh"
+source "${HOME}/.pyenv/versions/2.7.5/bin/virtualenvwrapper.sh"
 
 # minimise pip downloads
 export PIP_DOWNLOAD_CACHE="${HOME}/.pip/cache"
