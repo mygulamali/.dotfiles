@@ -20,6 +20,7 @@
 )
 
 ;; line numbering
+(require 'linum)
 (global-linum-mode 1)
 (setq linum-format "%d ")
 (global-set-key [f3] 'linum-mode)
@@ -65,8 +66,9 @@
 
 ;; powerline
 ;; https://github.com/milkypostman/powerline
+(add-to-list 'load-path "~/.emacs.d/powerline/")
 (require 'powerline)
-(powerline-default)
+(powerline-default-theme)
 
 ;; http://www.emacswiki.org/emacs/SupportBiDi
 (setq-default bidi-display-reordering t)
