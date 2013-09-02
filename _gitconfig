@@ -1,5 +1,5 @@
 [core]
-	pager = less -F -E
+    pager = less -F -E
 [user]
     name = Murtaza Gulamali
     email = mygulamali@gmail.com
@@ -23,3 +23,5 @@
     assume   = update-index --assume-unchanged
     unassume = update-index --no-assume-unchanged
     assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
+[credential]
+    helper = osxkeychain
