@@ -43,18 +43,6 @@ function parse_git_branch {
     echo "("${ref#refs/heads/}")"
 }
 
-# function to complete fab commands using TAB
-# https://github.com/adamv/dotfiles/blob/master/completion_scripts/fab_completion.bash
-#fab_completion() {
-#    COMPREPLY=()
-#    /usr/bin/which -s fab || return 0
-#    [[ -f fabfile.py || -d fabfile ]] || return 0
-#    local cur="${COMP_WORDS[COMP_CWORD]}"
-#    tasks=$(fab --shortlist)
-#    COMPREPLY=( $(compgen -W "${tasks}" -- ${cur}) )
-#}
-#complete -F fab_completion fab
-
 # command line prompt
 if [ $(tput colors) -ge 8 ]; then
     BLACK="\[\033[0;30m\]"
@@ -91,7 +79,7 @@ export PIP_DOWNLOAD_CACHE="${HOME}/.pip/cache"
 [[ ! -d $PIP_DOWNLOAD_CACHE ]] && mkdir -p $PIP_DOWNLOAD_CACHE
 
 # rbenv (https://github.com/sstephenson/rbenv)
-export PATH=$HOME/.rbenv/bin:$PATH
+export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
 eval "$(rbenv init -)"
 rbenv global 1.9.3-p448
 
