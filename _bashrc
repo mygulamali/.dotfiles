@@ -91,6 +91,9 @@ if [ -d /usr/local/share/npm ]; then
     export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/share/npm/lib
 fi
 
+# Postgres.app
+[[ -d /Applications/Postgres.app ]] && export PATH=/Applications/Postgres.app/Contents/MacOS/bin:$PATH
+
 # add node.js build
 export NODE_HOME=${HOME}/Projects/node
 if [ -d ${NODE_HOME} ]; then
