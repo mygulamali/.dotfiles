@@ -107,5 +107,11 @@ export PROJECT_DIR="${HOME}/Projects"
 # git-hooks (https://github.com/icefox/git-hooks)
 [[ -d ${PROJECT_DIR}/git-hooks ]] && export PATH=${PATH}:${PROJECT_DIR}/git-hooks
 
+# aliases to control MySQL server
+if [ -x $(which mysql.server) ]; then
+    alias mysqlup='mysql.server start'
+    alias mysqldown='mysql.server stop'
+fi
+
 # add personal bin directory (this should always be at the end)
 [[ -d ${HOME}/bin ]] && export PATH=${HOME}/bin:${PATH}
