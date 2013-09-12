@@ -40,9 +40,9 @@
 (setq diff-switches "-u")
 
 ;; set tabs
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
-(setq-default indent-line-function 'insert-tab)
+;(setq-default indent-tabs-mode nil)
+;(setq-default tab-width 2)
+;(setq-default indent-line-function 'insert-tab)
 ;(global-set-key (kbd "TAB") 'tab-to-tab-stop)
 ;(setq-default tab-stop-list (number-sequence 4 256 4))
 (define-key function-key-map [iso-lefttab] [backtab])
@@ -83,6 +83,7 @@
  '(display-time-format nil)
  '(display-time-mode t nil (time))
  '(fill-column 78)
+ '(global-hl-line-mode t)
  '(ido-enable-flex-matching t)
  '(js-indent-level 2)
  '(make-backup-files nil))
@@ -92,4 +93,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(hl-line ((t (:background "#222")))))
