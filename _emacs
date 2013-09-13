@@ -22,7 +22,7 @@
 ;; line numbering
 (require 'linum)
 (global-linum-mode 1)
-(setq linum-format "%d ")
+(setq linum-format "%4d ")
 (global-set-key [f3] 'linum-mode)
 
 ;; enable deletion of entire regions
