@@ -3,14 +3,34 @@
 ;; disable loading of "default.el" at startup
 ;(setq inhibit-default-init t)
 
-(add-to-list 'load-path "~/.emacs.d/")
-(add-to-list 'load-path "~/.emacs.d/plugins/")
+;; setup ELPA
+(setq package-archives
+  '(
+    ("gnu" . "http://elpa.gnu.org/packages/")
+    ("marmalade" . "http://marmalade-repo.org/packages/")
+    ("melpa" . "http://melpa.milkbox.net/packages/")
+  )
+)
+(package-initialize)
+(setq url-http-attempt-keepalives nil)
 
-(setq package-archives '(
-  ("gnu" . "http://elpa.gnu.org/packages/")
-  ("marmalade" . "http://marmalade-repo.org/packages/")
-  ("melpa" . "http://melpa.milkbox.net/packages/")
-))
+;; my packages
+(setq my-packages
+  '(
+    haml-mode
+    powerline
+    rspec-mode
+    ruby-test-mode
+    ruby-tools
+    sass-mode
+   )
+)
+
+;; load my-packages (http://stackoverflow.com/questions/14836958/updating-packages-in-emacs)
+(when (not package-archive-contents) (package-refresh-contents))
+(dolist (pkg my-packages)
+  (when (and (not (package-installed-p pkg)) (assoc pkg package-archive-contents))
+    (package-install pkg)))
 
 ;; disable startup message/splash
 (setq inhibit-splash-screen t)
@@ -54,7 +74,7 @@
 (define-key function-key-map [iso-lefttab] [backtab])
 
 ;; always end a file with a newline
-(setq require-final-newline 'query)
+(setq require-final-newline t)
 
 ;; refresh using F5
 ;; http://tsengf.blogspot.co.uk/2011/06/bind-f5-to-revert-buffer-in-emacs.html
@@ -65,8 +85,6 @@
 (ido-mode t)
 
 ;; powerline
-;; https://github.com/milkypostman/powerline
-(add-to-list 'load-path "~/.emacs.d/powerline/")
 (require 'powerline)
 (powerline-default-theme)
 
@@ -74,8 +92,6 @@
 (setq-default bidi-display-reordering t)
 
 ;; python-mode
-;(add-to-list 'load-path "~/.emacs.d/plugins/python-mode.el-6.0.7/")
-;(setq py-install-directory "~/.emacs.d/plugins/python-mode.el-6.0.7/")
 ;(require 'python-mode)
 ;(setq-default py-indent-offset 4)
 
