@@ -58,12 +58,6 @@
 (require 'ido)
 (ido-mode t)
 
-;; python-mode
-;(add-to-list 'load-path "~/.emacs.d/plugins/python-mode.el-6.0.7/") 
-;(setq py-install-directory "~/.emacs.d/plugins/python-mode.el-6.0.7/")
-;(require 'python-mode)
-;(setq-default py-indent-offset 4)
-
 ;; powerline
 ;; https://github.com/milkypostman/powerline
 (add-to-list 'load-path "~/.emacs.d/powerline/")
@@ -72,6 +66,18 @@
 
 ;; http://www.emacswiki.org/emacs/SupportBiDi
 (setq-default bidi-display-reordering t)
+
+;; python-mode
+;(add-to-list 'load-path "~/.emacs.d/plugins/python-mode.el-6.0.7/")
+;(setq py-install-directory "~/.emacs.d/plugins/python-mode.el-6.0.7/")
+;(require 'python-mode)
+;(setq-default py-indent-offset 4)
+
+;; ruby-mode for most ruby files
+(add-to-list 'auto-mode-alist
+  '("\\.\\(?:gemspec\\|irbrc\\|gemrc\\|rake\\|rb\\|ru\\|thor\\)\\'" . ruby-mode))
+(add-to-list 'auto-mode-alist
+  '("\\(Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . ruby-mode))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
