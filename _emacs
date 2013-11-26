@@ -6,6 +6,12 @@
 (add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "~/.emacs.d/plugins/")
 
+(setq package-archives '(
+  ("gnu" . "http://elpa.gnu.org/packages/")
+  ("marmalade" . "http://marmalade-repo.org/packages/")
+  ("melpa" . "http://melpa.milkbox.net/packages/")
+))
+
 ;; disable startup message/splash
 (setq inhibit-splash-screen t)
 (setq inhibit-startup-message t)
