@@ -18,6 +18,8 @@
 (setq my-packages
   '(
     haml-mode
+    markdown-mode
+    markdown-mode+
     powerline
     rspec-mode
     ruby-test-mode
