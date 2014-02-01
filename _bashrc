@@ -81,26 +81,13 @@ export PIP_DOWNLOAD_CACHE="${HOME}/.pip/cache"
 # rbenv (https://github.com/sstephenson/rbenv)
 export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
 eval "$(rbenv init -)"
-rbenv global 1.9.3-p448
+rbenv global 2.1.0
 
 # rails
 export RAILS_ENV=development
 
-# npm
-if [ -d /usr/local/share/npm ]; then
-    export PATH=${PATH}:/usr/local/share/npm/bin
-    export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/share/npm/lib
-fi
-
 # Postgres.app
 [[ -d /Applications/Postgres.app ]] && export PATH=/Applications/Postgres.app/Contents/MacOS/bin:$PATH
-
-# add node.js build
-export NODE_HOME=${HOME}/Projects/node
-if [ -d ${NODE_HOME} ]; then
-    export PATH=${PATH}:${NODE_HOME}/bin
-    export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${NODE_HOME}/lib
-fi
 
 # the one true editor
 export EDITOR=emacs
