@@ -81,7 +81,7 @@ export PIP_DOWNLOAD_CACHE="${HOME}/.pip/cache"
 # rbenv (https://github.com/sstephenson/rbenv)
 export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
 eval "$(rbenv init -)"
-rbenv global 1.9.3-p448
+rbenv global 2.1.0
 
 # rails
 export RAILS_ENV=development
