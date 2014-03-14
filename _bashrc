@@ -117,5 +117,8 @@ if [ -x $(which mysql.server) ]; then
     alias mysqldown='mysql.server stop'
 fi
 
+# added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
 # add personal bin directory (this should always be at the end)
 [[ -d ${HOME}/bin ]] && export PATH=${HOME}/bin:${PATH}
