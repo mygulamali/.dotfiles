@@ -24,13 +24,6 @@ alias psa='ps aux'
 alias pingg='ping -c 3 www.google.com'
 alias be='bundle exec'
 
-# grep aliases
-alias grep='grep -nI --color=auto'
-alias grepjs='grep -r --include=*.js'
-alias grepml='grep -r --include=*.html'
-alias greppy='grep -r --include=*.py'
-alias greprb='grep -r --include=*.rb'
-
 # function to pull master and then go back to your current branch
 function pullmaster {
     current=$(git symbolic-ref HEAD 2> /dev/null) || return
