@@ -27,30 +27,30 @@ alias bitcoin='curl -s https://bitpay.com/api/rates | jq .[2]'
 
 # function to pull master and then go back to your current branch
 function pullmaster {
-    current=$(git symbolic-ref HEAD 2> /dev/null) || return
-    git checkout master && git pull && git checkout ${current#refs/heads/}
+  current=$(git symbolic-ref HEAD 2> /dev/null) || return
+  git checkout master && git pull && git checkout ${current#refs/heads/}
 }
 
 # function to get current branch if PWD is a git repo
 function parse_git_branch {
-    ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-    echo "("${ref#refs/heads/}")"
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  echo "("${ref#refs/heads/}")"
 }
 
 # command line prompt
 if [ $(tput colors) -ge 8 ]; then
-    BLACK="\[\033[0;30m\]"
-    RED="\[\033[0;31m\]"
-    GREEN="\[\033[0;32m\]"
-    YELLOW="\[\033[0;33m\]"
-    BLUE="\[\033[0;34m\]"
-    MAGENTA="\[\033[0;35m\]"
-    CYAN="\[\033[0;36m\]"
-    WHITE="\[\033[0;37m\]"
-    NORMAL="\[\033[0;0m\]"
-    export PS1="$RED\u@\h $BLUE\W $YELLOW\$(parse_git_branch)$NORMAL\n\\$ "
+  BLACK="\[\033[0;30m\]"
+  RED="\[\033[0;31m\]"
+  GREEN="\[\033[0;32m\]"
+  YELLOW="\[\033[0;33m\]"
+  BLUE="\[\033[0;34m\]"
+  MAGENTA="\[\033[0;35m\]"
+  CYAN="\[\033[0;36m\]"
+  WHITE="\[\033[0;37m\]"
+  NORMAL="\[\033[0;0m\]"
+  export PS1="$RED\u@\h $BLUE\W $YELLOW\$(parse_git_branch)$NORMAL\n\\$ "
 else
-    export PS1="\u@\h \W $(parse_git_branch)\n\\$ "
+  export PS1="\u@\h \W $(parse_git_branch)\n\\$ "
 fi
 
 # check the window size after each command and, if necessary,
@@ -75,7 +75,7 @@ export PIP_DOWNLOAD_CACHE="${HOME}/.pip/cache"
 # rbenv (https://github.com/sstephenson/rbenv)
 export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
 eval "$(rbenv init -)"
-rbenv global 2.1.3
+rbenv global 2.1.4
 
 # Postgres.app
 [[ -d /Applications/Postgres.app ]] && export PATH=/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH
@@ -91,8 +91,8 @@ export PROJECT_DIR="${HOME}/Projects"
 
 # aliases to control MySQL server
 if [ -x $(which mysql.server) ]; then
-    alias mysqlup='mysql.server start'
-    alias mysqldown='mysql.server stop'
+  alias mysqlup='mysql.server start'
+  alias mysqldown='mysql.server stop'
 fi
 
 # added by the Heroku Toolbelt
