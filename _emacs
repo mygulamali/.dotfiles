@@ -8,7 +8,7 @@
   '(
     ("gnu" . "http://elpa.gnu.org/packages/")
     ("marmalade" . "http://marmalade-repo.org/packages/")
-    ("melpa" . "http://melpa.milkbox.net/packages/")
+    ("melpa" . "http://melpa.org/packages/")
   )
 )
 (package-initialize)
@@ -25,6 +25,7 @@
     ruby-test-mode
     ruby-tools
     sass-mode
+    web-mode
    )
 )
 
@@ -102,6 +103,12 @@
   '("\\.\\(?:gemspec\\|irbrc\\|gemrc\\|rake\\|rb\\|ru\\|thor\\)\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist
   '("\\(Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . ruby-mode))
+
+;; setup web-mode
+(add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
+(setq web-mode-markup-indent-offset 2)
+(setq web-mode-css-indent-offset 2)
+(setq web-mode-code-indent-offset 2)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
