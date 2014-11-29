@@ -25,3 +25,7 @@
     assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
 [credential]
     helper = osxkeychain
+[filter "media"]
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required = true
