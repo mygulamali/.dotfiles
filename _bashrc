@@ -70,7 +70,7 @@ eval "$(rbenv init -)"
 rbenv global 2.2.1
 
 # Postgres.app
-[[ -d /Applications/Postgres.app ]] && export PATH=/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH
+[[ -d /Applications/Postgres.app ]] && export PATH=/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH
 
 # the one true editor
 export EDITOR=emacs
