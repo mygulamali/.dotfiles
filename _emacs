@@ -18,6 +18,7 @@
 (setq my-packages
   '(
     haml-mode
+    magit
     markdown-mode
     markdown-mode+
     powerline
