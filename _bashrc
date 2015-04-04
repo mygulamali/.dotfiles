@@ -37,6 +37,17 @@ function parse_git_branch {
   echo "("${ref#refs/heads/}")"
 }
 
+# function to open Github project page for current repo (hat tip to @sardaukar)
+function gh {
+  url=$(git config -l | grep --color=never "remote.origin.url" | sed -En "s/remote.origin.url=git(@|:\/\/)github.com(:|\/)(.+)\/(.+).git/https:\/\/github.com\/\3\/\4/p")
+  if echo "opening ${url}" | grep http; then
+    open ${url}
+  else
+    echo "no git repo found!"
+    return 1
+  fi
+}
+
 # command line prompt
 if [ $(tput colors) -ge 8 ]; then
   BLACK="\[\033[0;30m\]"
