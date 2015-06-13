@@ -98,6 +98,12 @@ if [ -x $(which mysql.server) ]; then
   alias mysqldown='mysql.server stop'
 fi
 
+# autocompletion
+if [ $(uname -s) == 'Darwin' ]; then
+  complete -C aws_completer aws
+  source /usr/local/etc/bash_completion.d/git-completion.bash
+fi
+
 # added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
