@@ -78,7 +78,7 @@ export PIP_DOWNLOAD_CACHE="${HOME}/.pip/cache"
 # rbenv (https://github.com/sstephenson/rbenv)
 export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
 eval "$(rbenv init -)"
-rbenv global 2.2.1
+rbenv global 2.2.2
 
 # Postgres.app
 [[ -d /Applications/Postgres.app ]] && export PATH=/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH
