@@ -1,5 +1,5 @@
 #!/bin/bash
-# This hook is run before every virtualenv is deactivated.
+# This hook is sourced before this virtualenv is deactivated.
 
 cd $PROJECT_DIR/`basename $VIRTUAL_ENV`
 

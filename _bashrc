@@ -77,6 +77,15 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # project directory (used by virtualenvs)
 export PROJECT_DIR="${HOME}/Projects/Personal"
 
+# pyenv (https://github.com/yyuu/pyenv)
+if which pyenv > /dev/null; then
+  eval "$(pyenv init -)"
+  pyenv global 3.4.3
+  # (https://github.com/yyuu/pyenv-virtualenvwrapper)
+  export WORKON_HOME=$HOME/.virtualenvs
+  pyenv virtualenvwrapper
+fi
+
 # minimise pip downloads
 export PIP_DOWNLOAD_CACHE="${HOME}/.pip/cache"
 [[ ! -d $PIP_DOWNLOAD_CACHE ]] && mkdir -p $PIP_DOWNLOAD_CACHE
