@@ -15,6 +15,9 @@ HISTFILESIZE=2000
 # number of threads to use for Intel MKL
 export MKL_NUM_THREADS=1
 
+# the one true editor
+export EDITOR=emacs
+
 # aliases
 unalias -a
 alias ls='ls -Gp'
@@ -82,9 +85,6 @@ rbenv global 2.2.2
 
 # Postgres.app
 [[ -d /Applications/Postgres.app ]] && export PATH=/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH
-
-# the one true editor
-export EDITOR=emacs
 
 # project directory (used by virtualenvs)
 export PROJECT_DIR="${HOME}/Projects"
