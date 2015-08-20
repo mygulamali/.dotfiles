@@ -86,10 +86,6 @@ if which pyenv > /dev/null; then
   pyenv virtualenvwrapper
 fi
 
-# minimise pip downloads
-export PIP_DOWNLOAD_CACHE="${HOME}/.pip/cache"
-[[ ! -d $PIP_DOWNLOAD_CACHE ]] && mkdir -p $PIP_DOWNLOAD_CACHE
-
 # rbenv (https://github.com/sstephenson/rbenv)
 export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
 eval "$(rbenv init -)"
