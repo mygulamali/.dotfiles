@@ -21,7 +21,6 @@
     magit
     markdown-mode
     markdown-mode+
-    powerline
     rspec-mode
     ruby-test-mode
     ruby-tools
@@ -87,10 +86,6 @@
 ;; ido
 (require 'ido)
 (ido-mode t)
-
-;; powerline
-(require 'powerline)
-(powerline-default-theme)
 
 ;; http://www.emacswiki.org/emacs/SupportBiDi
 (setq-default bidi-display-reordering t)
