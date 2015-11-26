@@ -83,6 +83,10 @@
 ;; http://tsengf.blogspot.co.uk/2011/06/bind-f5-to-revert-buffer-in-emacs.html
 (global-set-key [f5] '(lambda () (interactive) (revert-buffer nil t nil)))
 
+;; ibuffer
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+(autoload 'ibuffer "ibuffer" "List buffers." t)
+
 ;; ido
 (require 'ido)
 (ido-mode t)
