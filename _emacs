@@ -21,6 +21,7 @@
     magit
     markdown-mode
     markdown-mode+
+    monokai-theme
     rspec-mode
     ruby-test-mode
     ruby-tools
@@ -39,6 +40,12 @@
 (load-file "~/.emacs.d/sensible-defaults/sensible-defaults.el")
 (sensible-defaults/use-all-settings)
 (sensible-defaults/use-all-keybindings)
+
+;; set theme
+(load-theme 'monokai t)
+(setq default-frame-alist
+  (append default-frame-alist
+    '((background-color . "#000"))))
 
 ;; remove that menu bar
 (menu-bar-mode -1)
@@ -112,10 +119,3 @@
  '(ido-enable-flex-matching t)
  '(js-indent-level 2)
  '(make-backup-files nil))
-
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(hl-line ((t (:background "#222")))))
