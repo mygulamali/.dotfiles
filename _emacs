@@ -35,6 +35,11 @@
   (when (and (not (package-installed-p pkg)) (assoc pkg package-archive-contents))
     (package-install pkg)))
 
+;; sensible defaults (https://github.com/hrs/sensible-defaults.el)
+(load-file "~/.emacs.d/sensible-defaults/sensible-defaults.el")
+(sensible-defaults/use-all-settings)
+(sensible-defaults/use-all-keybindings)
+
 ;; disable startup message/splash
 (setq inhibit-splash-screen t)
 (setq inhibit-startup-message t)
