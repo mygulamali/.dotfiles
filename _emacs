@@ -40,30 +40,14 @@
 (sensible-defaults/use-all-settings)
 (sensible-defaults/use-all-keybindings)
 
-;; disable startup message/splash
-(setq inhibit-splash-screen t)
-(setq inhibit-startup-message t)
-
 ;; remove that menu bar
 (menu-bar-mode -1)
-
-;; turn on font-lock mode
-(when
-  (fboundp 'global-font-lock-mode)
-  (global-font-lock-mode t)
-)
 
 ;; line numbering
 (require 'linum)
 (global-linum-mode 1)
 (setq linum-format "%4d ")
 (global-set-key [f3] 'linum-mode)
-
-;; enable deletion of entire regions
-(setq delete-selection-mode t)
-
-;; enable visual feedback on selections
-(setq transient-mark-mode t)
 
 ;; default to better frame titles
 (setq frame-title-format
@@ -80,13 +64,6 @@
 ;(global-set-key (kbd "TAB") 'tab-to-tab-stop)
 ;(setq-default tab-stop-list (number-sequence 4 256 4))
 (define-key function-key-map [iso-lefttab] [backtab])
-
-;; always end a file with a newline
-(setq require-final-newline t)
-
-;; refresh using F5
-;; http://tsengf.blogspot.co.uk/2011/06/bind-f5-to-revert-buffer-in-emacs.html
-(global-set-key [f5] '(lambda () (interactive) (revert-buffer nil t nil)))
 
 ;; ibuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
@@ -131,7 +108,6 @@
  '(display-time-24hr-format t)
  '(display-time-format nil)
  '(display-time-mode t nil (time))
- '(fill-column 78)
  '(global-hl-line-mode t)
  '(ido-enable-flex-matching t)
  '(js-indent-level 2)
