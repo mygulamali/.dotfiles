@@ -97,6 +97,9 @@
 (add-to-list 'auto-mode-alist
   '("\\(Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . ruby-mode))
 
+;; rspec-mode
+(require 'rspec-mode)
+
 ;; setup web-mode
 (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
 (setq web-mode-markup-indent-offset 2)
