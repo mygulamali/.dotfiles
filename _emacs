@@ -50,6 +50,9 @@
 ;; remove that menu bar
 (menu-bar-mode -1)
 
+;; don't confirm when exiting
+(setq confirm-kill-emacs nil)
+
 ;; line numbering
 (require 'linum)
 (global-linum-mode 1)
