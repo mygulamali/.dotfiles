@@ -54,6 +54,10 @@
 ;; (overwrites sensible default)
 (setq confirm-kill-emacs nil)
 
+;; when opening a file, start searching in current directory
+;; (overwrites sensible default)
+(setq default-directory ".")
+
 ;; line numbering, press F3 to toggle
 (require 'linum)
 (global-linum-mode 1)
