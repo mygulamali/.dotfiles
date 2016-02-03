@@ -51,9 +51,10 @@
 (menu-bar-mode -1)
 
 ;; don't confirm when exiting
+;; (overwrites sensible default)
 (setq confirm-kill-emacs nil)
 
-;; line numbering
+;; line numbering, press F3 to toggle
 (require 'linum)
 (global-linum-mode 1)
 (setq linum-format "%4d ")
