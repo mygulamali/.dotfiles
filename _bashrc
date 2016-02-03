@@ -51,6 +51,14 @@ function gh {
   fi
 }
 
+# function to flush DNS cache in Mac OS X (El Capitan)
+function flush_dns {
+  if [ $(uname -s) == 'Darwin' ]; then
+    sudo dscacheutil -flushcache
+    sudo killall -HUP mDNSResponder
+  fi
+}
+
 # command line prompt
 if [ $(tput colors) -ge 8 ]; then
   BLACK="\[\033[0;30m\]"
