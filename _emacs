@@ -87,6 +87,7 @@
 ;; ido
 (require 'ido)
 (ido-mode t)
+(setq ido-enable-flex-matching t)
 
 ;; magit
 (global-set-key (kbd "C-x g") 'magit-status)
@@ -127,6 +128,5 @@
  '(display-time-format nil)
  '(display-time-mode t nil (time))
  '(global-hl-line-mode t)
- '(ido-enable-flex-matching t)
  '(js-indent-level 2)
  '(make-backup-files nil))
