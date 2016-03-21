@@ -122,6 +122,3 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # added by travis gem
 [ -f /Users/murtaza/.travis/travis.sh ] && source /Users/murtaza/.travis/travis.sh
-
-# add personal bin directory (this should always be at the end)
-[[ -d ${HOME}/bin ]] && export PATH=${HOME}/bin:${PATH}
