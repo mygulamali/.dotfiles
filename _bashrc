@@ -88,7 +88,7 @@ export PROJECT_DIR="${HOME}/Projects/Personal"
 # pyenv (https://github.com/yyuu/pyenv)
 export PATH=$HOME/.pyenv/bin:$PATH
 eval "$(pyenv init -)"
-pyenv global system
+pyenv global 2.7.11
 # (https://github.com/yyuu/pyenv-virtualenvwrapper)
 export WORKON_HOME=$HOME/.virtualenvs
 pyenv virtualenvwrapper
