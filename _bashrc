@@ -86,13 +86,12 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PROJECT_DIR="${HOME}/Projects/Personal"
 
 # pyenv (https://github.com/yyuu/pyenv)
-if which pyenv > /dev/null; then
-  eval "$(pyenv init -)"
-  pyenv global 3.4.3
-  # (https://github.com/yyuu/pyenv-virtualenvwrapper)
-  export WORKON_HOME=$HOME/.virtualenvs
-  pyenv virtualenvwrapper
-fi
+export PATH=$HOME/.pyenv/bin:$PATH
+eval "$(pyenv init -)"
+pyenv global system
+# (https://github.com/yyuu/pyenv-virtualenvwrapper)
+export WORKON_HOME=$HOME/.virtualenvs
+pyenv virtualenvwrapper
 
 # rbenv (https://github.com/sstephenson/rbenv)
 export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
