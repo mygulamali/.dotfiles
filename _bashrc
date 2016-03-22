@@ -105,7 +105,7 @@ rbenv global 2.3.0
 [[ -d ${PROJECT_DIR}/git-hooks ]] && export PATH=${PATH}:${PROJECT_DIR}/git-hooks
 
 # aliases to control MySQL server
-if [ -x $(which mysql.server) ]; then
+if [ -x $(which mysql.server 2> /dev/null) ]; then
   alias mysqlup='mysql.server start'
   alias mysqldown='mysql.server stop'
 fi
