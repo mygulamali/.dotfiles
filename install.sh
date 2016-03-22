@@ -15,7 +15,8 @@ for FILE in $FILES; do
       rm $DOTFILE
     else
       # $DOTFILE exists as a real file
-      mv $DOTFILE $PWD/defaults/_${DOTFILE:1}
+      [[ ! -d $PWD/defaults ]] && mkdir -p $PWD/defaults
+      mv $DOTFILE $PWD/defaults/_${FILE:1}
     fi
   fi
   ln -s $PWD/$FILE $DOTFILE
