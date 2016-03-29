@@ -20,7 +20,7 @@ export EDITOR=emacs
 
 # aliases
 unalias -a
-alias ls='ls -Gp'
+alias ls='ls -Gp --color'
 alias ll='ls -aFhl'
 alias g='git'
 alias psa='ps aux'
