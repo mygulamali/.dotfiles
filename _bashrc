@@ -20,13 +20,14 @@ export EDITOR=emacs
 
 # aliases
 unalias -a
-alias ls='ls -Gp --color'
-alias ll='ls -aFhl'
-alias g='git'
-alias psa='ps aux'
-alias pingg='ping -c 3 www.google.com'
 alias be='bundle exec'
 alias bitcoin='curl -s https://bitpay.com/api/rates | jq .[3]'
+alias g='git'
+alias gpg='gpg2'
+alias ll='ls -aFhl'
+alias ls='ls -Gp --color=auto'
+alias pingg='ping -c 3 www.google.com'
+alias psa='ps aux'
 
 # function to pull master and then go back to your current branch
 function pullmaster {
