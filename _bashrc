@@ -107,6 +107,9 @@ nvm use 5.11.0
 # Postgres.app
 [[ -d /Applications/Postgres.app ]] && export PATH=/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH
 
+# Elasticsearch test server
+export TEST_CLUSTER_NODES=1
+
 # git-hooks (https://github.com/icefox/git-hooks)
 [[ -d ${PROJECT_DIR}/git-hooks ]] && export PATH=${PATH}:${PROJECT_DIR}/git-hooks
 
