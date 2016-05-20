@@ -92,27 +92,9 @@
 ;; http://www.emacswiki.org/emacs/SupportBiDi
 (setq-default bidi-display-reordering t)
 
-;; python-mode
-;(require 'python-mode)
-;(setq-default py-indent-offset 4)
-
-;; ruby-mode for most ruby files
-(add-to-list 'auto-mode-alist
-  '("\\.\\(?:gemspec\\|irbrc\\|gemrc\\|rake\\|rb\\|ru\\|thor\\)\\'" . ruby-mode))
-(add-to-list 'auto-mode-alist
-  '("\\(Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . ruby-mode))
-
-;; rspec-mode
-(require 'rspec-mode)
-
-;; setup web-mode
-(add-to-list 'auto-mode-alist '("\\.\\(erb\\|jsx\\)$" . web-mode))
-(setq web-mode-markup-indent-offset 2)
-(setq web-mode-css-indent-offset 2)
-(setq web-mode-code-indent-offset 2)
-
-;; setup html-mode
-(setq html-mode-markup-indent-offset 2)
+;; load configuration for modes
+(dolist (file (directory-files "./.emacs.d/config/modes" t ".+\\.el$"))
+  (load (file-name-sans-extension file) nil t))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
