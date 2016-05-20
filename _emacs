@@ -28,6 +28,7 @@
     sass-mode
     scss-mode
     web-mode
+    yaml-mode
    )
 )
 
