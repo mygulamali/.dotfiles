@@ -26,6 +26,7 @@
     ruby-test-mode
     ruby-tools
     sass-mode
+    scss-mode
     web-mode
    )
 )
