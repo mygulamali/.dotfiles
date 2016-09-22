@@ -90,9 +90,19 @@ export PROJECT_DIR="${HOME}/Projects/Personal"
 export PATH=$HOME/.pyenv/bin:$PATH
 eval "$(pyenv init -)"
 pyenv global 2.7.11
+
 # (https://github.com/yyuu/pyenv-virtualenvwrapper)
 export WORKON_HOME=$HOME/.virtualenvs
 pyenv virtualenvwrapper
+
+# (https://justin.abrah.ms/python/virtualenv_wrapper_helper.html)
+export PROMPT_COMMAND="${PROMPT_COMMAND};prompt"
+function prompt() {
+  if [ "$PWD" != "$MYOLDPWD" ]; then
+    MYOLDPWD="$PWD"
+    test -e .venv && workon `cat .venv`
+  fi
+}
 
 # rbenv (https://github.com/sstephenson/rbenv)
 export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
