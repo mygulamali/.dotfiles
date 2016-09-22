@@ -121,7 +121,7 @@
 (setq-default bidi-display-reordering t)
 
 ;; load configuration for modes
-(dolist (file (directory-files "./.emacs.d/config/modes" t ".+\\.el$"))
+(dolist (file (directory-files "~/.emacs.d/config/modes" t ".+\\.el$"))
   (load (file-name-sans-extension file) nil t))
 
 (custom-set-variables
