@@ -17,6 +17,7 @@
 ;; my packages
 (setq my-packages
   '(
+    ag
     haml-mode
     magit
     markdown-mode
@@ -72,11 +73,15 @@
 
 ;; set tabs
 (setq-default indent-tabs-mode nil)
-(setq-default tab-width 2)
+;; (setq-default tab-width 2)
 (setq-default indent-line-function 'insert-tab)
 ;(global-set-key (kbd "TAB") 'tab-to-tab-stop)
 ;(setq-default tab-stop-list (number-sequence 4 256 4))
 (define-key function-key-map [iso-lefttab] [backtab])
+
+;; ag, press F2 to search across project
+(setq ag-reuse-buffers t)
+(global-set-key [f2] 'ag-project)
 
 ;; ibuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
