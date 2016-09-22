@@ -1,0 +1,2 @@
+addpath("/home/murtaza/.octave.d")
+addpath("/home/murtaza/.octave.d/jsonlab")
