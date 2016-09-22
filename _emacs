@@ -17,6 +17,7 @@
 ;; my packages
 (setq my-packages
   '(
+    ag
     haml-mode
     magit
     markdown-mode
@@ -26,7 +27,9 @@
     ruby-test-mode
     ruby-tools
     sass-mode
+    scss-mode
     web-mode
+    yaml-mode
    )
 )
 
@@ -38,7 +41,28 @@
 
 ;; sensible defaults (https://github.com/hrs/sensible-defaults.el)
 (load-file "~/.emacs.d/sensible-defaults/sensible-defaults.el")
-(sensible-defaults/use-all-settings)
+(sensible-defaults/increase-gc-threshold)
+(sensible-defaults/backup-to-temp-directory)
+(sensible-defaults/delete-trailing-whitespace)
+(sensible-defaults/treat-camelcase-as-separate-words)
+(sensible-defaults/automatically-follow-symlinks)
+(sensible-defaults/make-scripts-executable)
+(sensible-defaults/single-space-after-periods)
+(sensible-defaults/offer-to-create-parent-directories-on-save)
+(sensible-defaults/apply-changes-to-highlighted-region)
+(sensible-defaults/overwrite-selected-text)
+(sensible-defaults/ensure-that-files-end-with-newline)
+(sensible-defaults/confirm-closing-emacs)
+(sensible-defaults/quiet-startup)
+(sensible-defaults/make-dired-file-sizes-human-readable)
+(sensible-defaults/shorten-yes-or-no)
+(sensible-defaults/always-highlight-code)
+(sensible-defaults/refresh-buffers-when-files-change)
+(sensible-defaults/show-matching-parens)
+(sensible-defaults/flash-screen-instead-of-ringing-bell)
+(sensible-defaults/set-default-line-length-to 80)
+(sensible-defaults/open-clicked-files-in-same-frame-on-mac)
+(sensible-defaults/yank-to-point-on-mouse-click)
 (sensible-defaults/use-all-keybindings)
 
 ;; set theme
@@ -70,11 +94,15 @@
 
 ;; set tabs
 (setq-default indent-tabs-mode nil)
-(setq-default tab-width 2)
+;; (setq-default tab-width 2)
 (setq-default indent-line-function 'insert-tab)
 ;(global-set-key (kbd "TAB") 'tab-to-tab-stop)
 ;(setq-default tab-stop-list (number-sequence 4 256 4))
 (define-key function-key-map [iso-lefttab] [backtab])
+
+;; ag, press F2 to search across project
+(setq ag-reuse-buffers t)
+(global-set-key [f2] 'ag-project)
 
 ;; ibuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
@@ -92,27 +120,9 @@
 ;; http://www.emacswiki.org/emacs/SupportBiDi
 (setq-default bidi-display-reordering t)
 
-;; python-mode
-;(require 'python-mode)
-;(setq-default py-indent-offset 4)
-
-;; ruby-mode for most ruby files
-(add-to-list 'auto-mode-alist
-  '("\\.\\(?:gemspec\\|irbrc\\|gemrc\\|rake\\|rb\\|ru\\|thor\\)\\'" . ruby-mode))
-(add-to-list 'auto-mode-alist
-  '("\\(Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . ruby-mode))
-
-;; rspec-mode
-(require 'rspec-mode)
-
-;; setup web-mode
-(add-to-list 'auto-mode-alist '("\\.\\(erb\\|jsx\\)$" . web-mode))
-(setq web-mode-markup-indent-offset 2)
-(setq web-mode-css-indent-offset 2)
-(setq web-mode-code-indent-offset 2)
-
-;; setup html-mode
-(setq html-mode-markup-indent-offset 2)
+;; load configuration for modes
+(dolist (file (directory-files "~/.emacs.d/config/modes" t ".+\\.el$"))
+  (load (file-name-sans-extension file) nil t))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

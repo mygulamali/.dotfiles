@@ -1,1 +1,5 @@
 defaults/
+
+!_emacs.d/
+_emacs.d/*
+!_emacs.d/config
