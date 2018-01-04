@@ -111,12 +111,6 @@ export TEST_CLUSTER_NODES=1
 # git-hooks (https://github.com/icefox/git-hooks)
 [[ -d ${PROJECT_DIR}/git-hooks ]] && export PATH=${PATH}:${PROJECT_DIR}/git-hooks
 
-# aliases to control MySQL server
-if [ -x $(which mysql.server 2> /dev/null) ]; then
-  alias mysqlup='mysql.server start'
-  alias mysqldown='mysql.server stop'
-fi
-
 # autocompletion
 if [ $(uname -s) == 'Darwin' ]; then
   complete -C aws_completer aws
