@@ -107,7 +107,7 @@ function prompt() {
 # rbenv (https://github.com/sstephenson/rbenv)
 export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
 eval "$(rbenv init -)"
-rbenv global 2.3.1
+rbenv global 2.5.0
 
 # nvm (https://github.com/creationix/nvm)
 export NVM_DIR="/home/murtaza/.nvm"
