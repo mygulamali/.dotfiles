@@ -98,7 +98,8 @@ rbenv global 2.5.0
 
 # nvm (https://github.com/creationix/nvm)
 export NVM_DIR="/home/murtaza/.nvm"
-[[ -s "$NVM_DIR/nvm.sh" ]] && . "$NVM_DIR/nvm.sh"
+[[ -s "$NVM_DIR/nvm.sh" ]] && \. "$NVM_DIR/nvm.sh"
+[[ -s "$NVM_DIR/bash_completion" ]] && \. "$NVM_DIR/bash_completion"
 nvm use --silent 9.3.0
 
 # Postgres.app
