@@ -129,3 +129,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # added by travis gem
 [ -f /Users/murtaza/.travis/travis.sh ] && source /Users/murtaza/.travis/travis.sh
+
+# added by Anaconda2 installer
+export PATH="/home/murtaza/anaconda2/bin:$PATH"
