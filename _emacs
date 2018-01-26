@@ -117,6 +117,8 @@
 ;; magit
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
+(setq git-commit-summary-max-length 54)
+(setq git-commit-fill-column 72)
 
 ;; fci (column indicator)
 (global-set-key [f4] 'fci-mode)
