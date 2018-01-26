@@ -18,6 +18,7 @@
 (setq my-packages
   '(
     ag
+    fci-mode
     haml-mode
     magit
     markdown-mode
@@ -116,6 +117,9 @@
 ;; magit
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
+
+;; fci (column indicator)
+(global-set-key [f4] 'fci-mode)
 
 ;; http://www.emacswiki.org/emacs/SupportBiDi
 (setq-default bidi-display-reordering t)
