@@ -126,6 +126,9 @@
 ;; http://www.emacswiki.org/emacs/SupportBiDi
 (setq-default bidi-display-reordering t)
 
+;; revert buffer
+(global-set-key [f5] 'revert-buffer)
+
 ;; load configuration for modes
 (dolist (file (directory-files "~/.emacs.d/config/modes" t ".+\\.el$"))
   (load (file-name-sans-extension file) nil t))
