@@ -23,6 +23,7 @@
     magit
     markdown-mode
     markdown-mode+
+    minitest
     monokai-theme
     rspec-mode
     ruby-test-mode
