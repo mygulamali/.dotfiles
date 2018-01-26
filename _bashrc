@@ -18,6 +18,9 @@ export MKL_NUM_THREADS=1
 # the one true editor
 export EDITOR=emacs
 
+# locale settings
+export LC_ALL=$LANG
+
 # aliases
 unalias -a
 alias be='bundle exec'
