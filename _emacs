@@ -144,7 +144,10 @@
  '(display-time-mode t nil (time))
  '(global-hl-line-mode t)
  '(js-indent-level 2)
- '(make-backup-files nil))
+ '(make-backup-files nil)
+ '(package-selected-packages
+   (quote
+    (yaml-mode web-mode sass-mode ruby-tools ruby-test-mode rspec-mode monokai-theme minitest markdown-mode+ markdown-mode magit haml-mode ag))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
