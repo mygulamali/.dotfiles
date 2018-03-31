@@ -3,6 +3,7 @@
 [user]
     name = Murtaza Gulamali
     email = mygulamali@gmail.com
+    signingkey = 0x3D89F8039AFC4D15
 [github]
     user = mygulamali
     token = c6ff38a913923eb47f1e68cba5a1efaa
@@ -33,3 +34,7 @@
     required = true
     clean = git lfs clean %f
     smudge = git lfs smudge %f
+[commit]
+    gpgsign = true
+[gpg]
+    program = gpg2
