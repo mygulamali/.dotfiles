@@ -90,9 +90,9 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PROJECT_DIR="${HOME}/Projects/Personal"
 
 # pyenv (https://github.com/yyuu/pyenv)
-export PATH=$HOME/.pyenv/bin:$PATH
-eval "$(pyenv init -)"
-pyenv global 2.7.14
+# export PATH=$HOME/.pyenv/bin:$PATH
+# eval "$(pyenv init -)"
+# pyenv global 2.7.14
 
 # rbenv (https://github.com/sstephenson/rbenv)
 export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
@@ -130,5 +130,5 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # added by travis gem
 [ -f /Users/murtaza/.travis/travis.sh ] && source /Users/murtaza/.travis/travis.sh
 
-# added by Anaconda2 installer
-export PATH="/home/murtaza/anaconda2/bin:$PATH"
+# added by Anaconda3 installer
+export PATH="/home/murtaza/anaconda3/bin:$PATH"
