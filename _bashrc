@@ -74,9 +74,9 @@ if [ $(tput colors) -ge 8 ]; then
   CYAN="\[\033[0;36m\]"
   WHITE="\[\033[0;37m\]"
   NORMAL="\[\033[0;0m\]"
-  export PS1="$RED\u@\h $BLUE\W $YELLOW\$(parse_git_branch)$NORMAL\n\\$ "
+  export PS1="$GREEN[\t] $RED\u@\h $BLUE\W $YELLOW\$(parse_git_branch)$NORMAL\n\\$ "
 else
-  export PS1="\u@\h \W $(parse_git_branch)\n\\$ "
+  export PS1="[\t] \u@\h \W $(parse_git_branch)\n\\$ "
 fi
 
 # check the window size after each command and, if necessary,
