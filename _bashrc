@@ -103,7 +103,7 @@ rbenv global 2.5.1
 export NVM_DIR="/home/murtaza/.nvm"
 [[ -s "$NVM_DIR/nvm.sh" ]] && \. "$NVM_DIR/nvm.sh"
 [[ -s "$NVM_DIR/bash_completion" ]] && \. "$NVM_DIR/bash_completion"
-nvm use --silent 9.3.0
+nvm use --silent 9.11.1
 
 # Android development environment
 export ANDROID_HOME="$HOME/Android/Sdk"
