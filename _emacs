@@ -20,12 +20,12 @@
     ag
     fill-column-indicator
     haml-mode
-    js2-mode
     magit
     markdown-mode
     markdown-mode+
     minitest
     monokai-theme
+    rjsx-mode
     rspec-mode
     ruby-test-mode
     ruby-tools
@@ -147,7 +147,7 @@
  '(make-backup-files nil)
  '(package-selected-packages
    (quote
-    (yaml-mode web-mode sass-mode ruby-tools ruby-test-mode rspec-mode monokai-theme minitest markdown-mode+ markdown-mode magit js2-mode haml-mode fill-column-indicator ag))))
+    (yaml-mode web-mode sass-mode ruby-tools ruby-test-mode rspec-mode rjsx-mode monokai-theme minitest markdown-mode+ markdown-mode magit haml-mode fill-column-indicator ag))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
