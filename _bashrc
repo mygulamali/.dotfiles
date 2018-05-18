@@ -89,21 +89,9 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # project directory (used by virtualenvs)
 export PROJECT_DIR="${HOME}/Projects/Personal"
 
-# pyenv (https://github.com/yyuu/pyenv)
-# export PATH=$HOME/.pyenv/bin:$PATH
-# eval "$(pyenv init -)"
-# pyenv global 2.7.14
-
-# rbenv (https://github.com/sstephenson/rbenv)
-export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
-eval "$(rbenv init -)"
-rbenv global 2.5.1
-
-# nvm (https://github.com/creationix/nvm)
-export NVM_DIR="/home/murtaza/.nvm"
-[[ -s "$NVM_DIR/nvm.sh" ]] && \. "$NVM_DIR/nvm.sh"
-[[ -s "$NVM_DIR/bash_completion" ]] && \. "$NVM_DIR/bash_completion"
-nvm use --silent 9.11.1
+# asdf (https://github.com/asdf-vm/asdf)
+source "$HOME/.asdf/asdf.sh"
+source "$HOME/.asdf/completions/asdf.bash"
 
 # Android development environment
 export ANDROID_HOME="$HOME/Android/Sdk"
