@@ -76,10 +76,6 @@
 ;; remove that menu bar
 (menu-bar-mode -1)
 
-;; don't confirm when exiting
-;; (overwrites sensible default)
-(setq confirm-kill-emacs nil)
-
 ;; line numbering, press F3 to toggle
 (require 'linum)
 (global-linum-mode 1)
