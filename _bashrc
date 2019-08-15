@@ -25,11 +25,13 @@ export LC_ALL=$LANG
 unalias -a
 alias be='bundle exec'
 alias bitcoin='curl -s https://bitpay.com/api/rates | jq .[3]'
+alias e='emacs'
 alias g='git'
 alias gpg='gpg2'
 alias ll='ls -aFhl'
 alias ls='ls -Gp --color=auto'
 alias pingg='ping -c 3 www.google.com'
+alias pr='pipenv run'
 alias psa='ps aux'
 
 # function to pull master and then go back to your current branch
