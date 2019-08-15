@@ -49,8 +49,8 @@
 
 ;; sensible defaults (https://github.com/hrs/sensible-defaults.el)
 (load-file "~/.emacs.d/sensible-defaults/sensible-defaults.el")
+;;(sensible-defaults/open-files-from-home-directory)
 (sensible-defaults/increase-gc-threshold)
-(sensible-defaults/backup-to-temp-directory)
 (sensible-defaults/delete-trailing-whitespace)
 (sensible-defaults/treat-camelcase-as-separate-words)
 (sensible-defaults/automatically-follow-symlinks)
@@ -72,6 +72,7 @@
 (sensible-defaults/open-clicked-files-in-same-frame-on-mac)
 (sensible-defaults/yank-to-point-on-mouse-click)
 (sensible-defaults/use-all-keybindings)
+(sensible-defaults/backup-to-temp-directory)
 
 ;; set theme
 (load-theme 'monokai t)
