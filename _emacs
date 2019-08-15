@@ -18,7 +18,10 @@
 (setq my-packages
   '(
     ag
+    elpy
+    feature-mode
     fill-column-indicator
+    groovy-mode
     haml-mode
     magit
     markdown-mode
@@ -30,9 +33,12 @@
     ruby-test-mode
     ruby-tools
     sass-mode
+    scala-mode
+    slim-mode
+    terraform-mode
     web-mode
     yaml-mode
-   )
+  )
 )
 
 ;; load my-packages (http://stackoverflow.com/questions/14836958/updating-packages-in-emacs)
@@ -143,7 +149,7 @@
  '(make-backup-files nil)
  '(package-selected-packages
    (quote
-    (yaml-mode web-mode sass-mode ruby-tools ruby-test-mode rspec-mode rjsx-mode monokai-theme minitest markdown-mode+ markdown-mode magit haml-mode fill-column-indicator ag))))
+    (feature-mode terraform-mode elpy scala-mode slim-mode groovy-mode yaml-mode web-mode sass-mode ruby-tools ruby-test-mode rspec-mode rjsx-mode monokai-theme minitest markdown-mode+ markdown-mode magit haml-mode fill-column-indicator ag))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
