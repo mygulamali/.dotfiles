@@ -1,9 +1,5 @@
 [[ -f ${HOME}/.bashrc ]] && source ${HOME}/.bashrc
 
-# add personal bin directories
-[[ -d ${HOME}/bin ]] && PATH=${HOME}/bin:${PATH}
-[[ -d ${HOME}/.local/bin ]] && PATH=${HOME}/.local/bin:${PATH}
-export PATH
 
 # add Android SDK directories
 export ANDROID_HOME=/opt/android
