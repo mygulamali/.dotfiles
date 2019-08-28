@@ -48,7 +48,7 @@
     (package-install pkg)))
 
 ;; sensible defaults (https://github.com/hrs/sensible-defaults.el)
-(load-file "~/.emacs.d/sensible-defaults/sensible-defaults.el")
+(load-file "~/.emacs.d/sensible-defaults.el/sensible-defaults.el")
 ;;(sensible-defaults/open-files-from-home-directory)
 (sensible-defaults/increase-gc-threshold)
 (sensible-defaults/delete-trailing-whitespace)
