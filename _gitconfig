@@ -2,7 +2,7 @@
     pager = less -F -E
 [user]
     name = Murtaza Gulamali
-    email = mygulamali@gmail.com
+    email = murtaza@gulamali.net
 [github]
     user = mygulamali
 [rerere]
