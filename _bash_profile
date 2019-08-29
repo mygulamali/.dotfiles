@@ -1,5 +1,4 @@
-[[ -f ${HOME}/.bashrc ]] && source ${HOME}/.bashrc
-
+[[ -f ~/.bashrc ]] && . ~/.bashrc
 
 # add Android SDK directories
 export ANDROID_HOME=/opt/android
