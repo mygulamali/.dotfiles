@@ -117,6 +117,9 @@ if [ $(uname -s) == 'Darwin' ]; then
   source /usr/local/etc/bash_completion.d/git-completion.bash
 fi
 
+# direnv (https://direnv.net/)
+eval $(direnv hook bash)
+
 # added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
