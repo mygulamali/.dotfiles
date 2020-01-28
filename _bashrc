@@ -32,6 +32,7 @@ export LC_ALL=$LANG
 unalias -a
 alias be='bundle exec'
 alias bitcoin='curl -s https://bitpay.com/api/rates | jq .[3]'
+alias describe='sdcv --color --utf8-output --utf8-input'
 alias e='emacs'
 alias g='git'
 alias gpg='gpg2'
