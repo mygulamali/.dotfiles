@@ -34,6 +34,15 @@ alias pingg='ping -c 3 www.google.com'
 alias pr='pipenv run'
 alias psa='ps aux'
 
+## Homebrew
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+export PATH="/usr/local/sbin:$PATH"
+
 ## Git configuration
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
