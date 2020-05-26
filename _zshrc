@@ -67,3 +67,7 @@ if type brew &>/dev/null; then
 else
   . "$HOME/.asdf/asdf.sh"
 fi
+
+## virtualenvwrapper
+export WORKON_HOME="$HOME/.virtualenvs"
+. "$(asdf where python)/bin/virtualenvwrapper.sh"
