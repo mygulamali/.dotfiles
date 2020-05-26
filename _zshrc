@@ -60,3 +60,10 @@ export PROJECT_DIR="${HOME}/Projects"
 
 ## Add personal bin directory to PATH
 [[ -d "${PROJECT_DIR}/Personal/bin" ]] && export PATH="${PROJECT_DIR}/Personal/bin:${PATH}"
+
+## asdf-vm
+if type brew &>/dev/null; then
+  . $(brew --prefix asdf)/asdf.sh
+else
+  . "$HOME/.asdf/asdf.sh"
+fi
