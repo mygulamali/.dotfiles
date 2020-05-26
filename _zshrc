@@ -56,10 +56,10 @@ precmd() { print -rP '%F{green}%*%f %F{blue}%2~%f $vcs_info_msg_0_' }
 PROMPT='%(!.#.->) '
 
 ## Project directory
-export PROJECT_DIR="${HOME}/Projects"
+export PROJECT_HOME="$HOME/Projects"
 
 ## Add personal bin directory to PATH
-[[ -d "${PROJECT_DIR}/Personal/bin" ]] && export PATH="${PROJECT_DIR}/Personal/bin:${PATH}"
+[[ -d "$PROJECT_HOME/Personal/bin" ]] && export PATH="$PROJECT_HOME/Personal/bin:$PATH"
 
 ## asdf-vm
 if type brew &>/dev/null; then
