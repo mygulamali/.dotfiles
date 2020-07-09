@@ -3,7 +3,7 @@
 [user]
     name = Murtaza Gulamali
     email = murtaza@gulamali.net
-    signingkey = 0x3D89F8039AFC4D15
+    signingkey = 9E6D91D756161617
 [github]
     user = mygulamali
 [rerere]
@@ -34,8 +34,8 @@
     clean = git lfs clean %f
     smudge = git lfs smudge %f
 [commit]
-    gpgsign = false
+    gpgsign = true
 [gpg]
-    program = gpg2
+    program = gpg
 [includeIf "gitdir:~/Projects/BAI/"]
     path = "~/Projects/BAI/.gitconfig"
