@@ -127,6 +127,10 @@
 ;; revert buffer
 (global-set-key [f5] 'revert-buffer)
 
+;; python-pytest
+(global-set-key [f6] 'python-pytest-popup)
+
+
 ;; load configuration for modes
 (dolist (file (directory-files "~/.emacs.d/config/modes" t ".+\\.el$"))
   (load (file-name-sans-extension file) nil t))
@@ -144,7 +148,7 @@
  '(make-backup-files nil)
  '(package-selected-packages
    (quote
-    (feature-mode terraform-mode elpy scala-mode slim-mode groovy-mode yaml-mode web-mode sass-mode ruby-tools ruby-test-mode rspec-mode rjsx-mode monokai-theme minitest markdown-mode+ markdown-mode magit haml-mode fill-column-indicator ag))))
+    (python-pytest feature-mode terraform-mode elpy scala-mode slim-mode groovy-mode yaml-mode web-mode sass-mode ruby-tools ruby-test-mode rspec-mode rjsx-mode monokai-theme minitest markdown-mode+ markdown-mode magit haml-mode fill-column-indicator ag))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
