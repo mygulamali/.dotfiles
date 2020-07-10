@@ -52,8 +52,8 @@ zstyle ':vcs_info:git:*' formats '%F{yellow}(%b)%f'
 zstyle ':vcs_info:*' enable git
 
 ## Command line prompt
-precmd() { print -rP '%F{green}%*%f %F{blue}%1~%f $vcs_info_msg_0_' }
-PROMPT='%(!.#.->) '
+NEWLINE=$'\n'
+PROMPT="%F{green}%*%f %F{blue}%1~%f \$vcs_info_msg_0_${NEWLINE}%(!.#.->) "
 
 ## Project directory
 export PROJECT_HOME="$HOME/Projects"
