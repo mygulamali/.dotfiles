@@ -58,8 +58,9 @@ PROMPT="%F{green}%*%f %F{blue}%1~%f \$vcs_info_msg_0_${NEWLINE}%(!.#.->) "
 ## Project directory
 export PROJECT_HOME="$HOME/Projects"
 
-## Add personal bin directory to PATH
+## Add personal bin directories to PATH
 [[ -d "$PROJECT_HOME/Personal/bin" ]] && export PATH="$PROJECT_HOME/Personal/bin:$PATH"
+[[ -d "$PROJECT_HOME/BAI/bin" ]] && export PATH="$PROJECT_HOME/BAI/bin:$PATH"
 
 ## asdf-vm
 if type brew &>/dev/null; then
@@ -71,3 +72,7 @@ fi
 ## virtualenvwrapper
 export WORKON_HOME="$HOME/.virtualenvs"
 . "$(asdf where python)/bin/virtualenvwrapper.sh"
+
+## BAI helpers
+. $PROJECT_HOME/BAI/bin/beno-init.sh
+. /dev/stdin < <(beno-cli auth init)
