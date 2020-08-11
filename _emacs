@@ -127,11 +127,11 @@
 ;; revert buffer
 (global-set-key [f5] 'revert-buffer)
 
-;; python-pytest
-(global-set-key [f6] 'python-pytest-popup)
 ;; direnv
 (require 'direnv)
 
+;; python-pytest
+(global-set-key [f6] 'python-pytest-dispatch)
 
 ;; load configuration for modes
 (dolist (file (directory-files "~/.emacs.d/config/modes" t ".+\\.el$"))
