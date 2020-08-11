@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 ## History file configuration
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
 HISTSIZE=50000
@@ -72,6 +74,9 @@ fi
 ## virtualenvwrapper
 export WORKON_HOME="$HOME/.virtualenvs"
 . "$(asdf where python)/bin/virtualenvwrapper.sh"
+
+## direnv
+eval "$(direnv hook zsh)"
 
 ## BAI helpers
 . $PROJECT_HOME/BAI/bin/beno-init.sh
