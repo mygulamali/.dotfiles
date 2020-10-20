@@ -61,6 +61,7 @@ PROMPT="%F{green}%*%f %F{blue}%1~%f \$vcs_info_msg_0_${NEWLINE}%(!.#.->) "
 export PROJECT_HOME="$HOME/Projects"
 
 ## Add personal bin directories to PATH
+[[ -d "$HOME/.local/bin" ]] && export PATH="$HOME/.local/bin:$PATH"
 [[ -d "$PROJECT_HOME/Personal/bin" ]] && export PATH="$PROJECT_HOME/Personal/bin:$PATH"
 
 ## asdf-vm
