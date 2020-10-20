@@ -62,7 +62,6 @@ export PROJECT_HOME="$HOME/Projects"
 
 ## Add personal bin directories to PATH
 [[ -d "$PROJECT_HOME/Personal/bin" ]] && export PATH="$PROJECT_HOME/Personal/bin:$PATH"
-[[ -d "$PROJECT_HOME/BAI/bin" ]] && export PATH="$PROJECT_HOME/BAI/bin:$PATH"
 
 ## asdf-vm
 if type brew &>/dev/null; then
@@ -79,5 +78,5 @@ export WORKON_HOME="$HOME/.virtualenvs"
 eval "$(direnv hook zsh)"
 
 ## BAI helpers
-. $PROJECT_HOME/BAI/bin/beno-init.sh
+. /usr/local/bin/beno-init.sh
 . /dev/stdin < <(beno-cli auth init)
