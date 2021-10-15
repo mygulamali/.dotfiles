@@ -85,8 +85,8 @@
 (setq git-commit-summary-max-length 54)
 (setq git-commit-fill-column 72)
 
-;; fci (column indicator)
-(global-set-key [f4] 'fci-mode)
+;; fill column indicator
+(global-set-key [f4] 'display-fill-column-indicator-mode)
 
 ;; http://www.emacswiki.org/emacs/SupportBiDi
 (setq-default bidi-display-reordering t)
