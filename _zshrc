@@ -30,6 +30,7 @@ unalias -a
 alias be='bundle exec'
 alias e='emacs'
 alias g='git'
+alias k='kubectl'
 alias ll='ls -aFhl'
 alias ls='ls -Gp'
 alias pingg='ping -c 3 www.google.com'
