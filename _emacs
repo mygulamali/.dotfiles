@@ -14,39 +14,6 @@
 (package-initialize)
 (setq url-http-attempt-keepalives nil)
 
-;; my packages
-(setq my-packages
-  '(
-    ag
-    elpy
-    feature-mode
-    fill-column-indicator
-    groovy-mode
-    haml-mode
-    magit
-    markdown-mode
-    markdown-mode+
-    minitest
-    monokai-theme
-    rjsx-mode
-    rspec-mode
-    ruby-test-mode
-    ruby-tools
-    sass-mode
-    scala-mode
-    slim-mode
-    terraform-mode
-    web-mode
-    yaml-mode
-  )
-)
-
-;; load my-packages (http://stackoverflow.com/questions/14836958/updating-packages-in-emacs)
-(when (not package-archive-contents) (package-refresh-contents))
-(dolist (pkg my-packages)
-  (when (and (not (package-installed-p pkg)) (assoc pkg package-archive-contents))
-    (package-install pkg)))
-
 ;; sensible defaults (https://github.com/hrs/sensible-defaults.el)
 (load-file "~/.emacs.d/sensible-defaults.el/sensible-defaults.el")
 ;;(sensible-defaults/open-files-from-home-directory)
