@@ -116,8 +116,7 @@
  '(global-hl-line-mode t)
  '(make-backup-files nil)
  '(package-selected-packages
-   (quote
-    (direnv python-pytest feature-mode terraform-mode elpy scala-mode slim-mode groovy-mode yaml-mode web-mode sass-mode ruby-tools ruby-test-mode rspec-mode rjsx-mode monokai-theme minitest markdown-mode+ markdown-mode magit haml-mode fill-column-indicator ag))))
+   '(jq-format neotree dockerfile-mode python-pytest feature-mode terraform-mode elpy scala-mode slim-mode groovy-mode yaml-mode web-mode sass-mode rjsx-mode minitest markdown-mode+ markdown-mode magit haml-mode fill-column-indicator ag)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
