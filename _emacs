@@ -94,9 +94,6 @@
 ;; revert buffer
 (global-set-key [f5] 'revert-buffer)
 
-;; direnv
-(require 'direnv)
-
 ;; python-pytest
 (global-set-key [f6] 'python-pytest-dispatch)
 
