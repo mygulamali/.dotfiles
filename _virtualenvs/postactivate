@@ -1,8 +1,5 @@
-#!/bin/bash
-# This hook is sourced after this virtualenv is activated.
+#!/bin/zsh
+# This hook is sourced after every virtualenv is activated.
 
-PS1="(`basename \"$VIRTUAL_ENV\"`) $_OLD_VIRTUAL_PS1"
-export OLD_PYTHONPATH=$PYTHONPATH
-
-cd $PROJECT_DIR/`basename $VIRTUAL_ENV` && export PYTHONPATH=$PWD:$OLD_PYTHONPATH
-[[ -f development.env ]] && source development.env
+NEWLINE=$'\n'
+PS1="%F{green}%*%f %F{red}(`basename \"$VIRTUAL_ENV\"`)%f %F{blue}%1~%f \$vcs_info_msg_0_${NEWLINE}%(!.#.->) "
