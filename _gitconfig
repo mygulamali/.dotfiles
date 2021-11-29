@@ -37,5 +37,5 @@
     gpgsign = true
 [gpg]
     program = gpg
-[includeIf "gitdir:~/Projects/BAI/"]
-    path = "~/Projects/BAI/.gitconfig"
+[includeIf "gitdir:~/Projects"]
+    path = "~/Projects/.gitconfig"
