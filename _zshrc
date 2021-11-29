@@ -59,11 +59,11 @@ NEWLINE=$'\n'
 PROMPT="%F{green}%*%f %F{blue}%1~%f \$vcs_info_msg_0_${NEWLINE}%(!.#.->) "
 
 ## Project directory
-export PROJECT_HOME="$HOME/Projects"
+export PROJECT_HOME="$HOME/OneDrive/Projects"
 
 ## Add personal bin directories to PATH
 [[ -d "$HOME/.local/bin" ]] && export PATH="$HOME/.local/bin:$PATH"
-[[ -d "$PROJECT_HOME/Personal/bin" ]] && export PATH="$PROJECT_HOME/Personal/bin:$PATH"
+[[ -d "$PROJECT_HOME/bin" ]] && export PATH="$PROJECT_HOME/bin:$PATH"
 
 ## asdf-vm
 if type brew &>/dev/null; then
