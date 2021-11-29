@@ -65,6 +65,9 @@ export PROJECT_HOME="$HOME/OneDrive/Projects"
 [[ -d "$HOME/.local/bin" ]] && export PATH="$HOME/.local/bin:$PATH"
 [[ -d "$PROJECT_HOME/bin" ]] && export PATH="$PROJECT_HOME/bin:$PATH"
 
+## GPG uses current terminal to sign commits
+export GPG_TTY=$(tty)
+
 ## asdf-vm
 if type brew &>/dev/null; then
   . $(brew --prefix asdf)/asdf.sh
