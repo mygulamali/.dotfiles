@@ -100,6 +100,10 @@
 ;; python-pytest
 (global-set-key [f6] 'python-pytest-dispatch)
 
+;; neotree
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+
 ;; load configuration for modes
 (dolist (file (directory-files "~/.emacs.d/config/modes" t ".+\\.el$"))
   (load (file-name-sans-extension file) nil t))
@@ -118,7 +122,7 @@
  '(global-hl-line-mode t)
  '(make-backup-files nil)
  '(package-selected-packages
-   '(vscode-dark-plus-theme jinja2-mode jq-format dockerfile-mode python-pytest feature-mode terraform-mode elpy scala-mode slim-mode groovy-mode yaml-mode web-mode sass-mode rjsx-mode minitest markdown-mode+ markdown-mode magit haml-mode fill-column-indicator ag)))
+   '(neotree vscode-dark-plus-theme jinja2-mode jq-format dockerfile-mode python-pytest feature-mode terraform-mode elpy scala-mode slim-mode groovy-mode yaml-mode web-mode sass-mode rjsx-mode minitest markdown-mode+ markdown-mode magit haml-mode fill-column-indicator ag)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
