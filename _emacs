@@ -14,6 +14,9 @@
 (package-initialize)
 (setq url-http-attempt-keepalives nil)
 
+;; set theme
+(load-theme 'vscode-dark-plus t)
+
 ;; sensible defaults (https://github.com/hrs/sensible-defaults.el)
 (load-file "~/.emacs.d/sensible-defaults.el/sensible-defaults.el")
 ;;(sensible-defaults/open-files-from-home-directory)
@@ -107,13 +110,15 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
+ '(custom-safe-themes
+   '("6c4c97a17fc7b6c8127df77252b2d694b74e917bab167e7d3b53c769a6abb6d6" default))
  '(display-time-24hr-format t)
  '(display-time-format nil)
  '(display-time-mode t nil (time))
  '(global-hl-line-mode t)
  '(make-backup-files nil)
  '(package-selected-packages
-   '(jinja2-mode jq-format dockerfile-mode python-pytest feature-mode terraform-mode elpy scala-mode slim-mode groovy-mode yaml-mode web-mode sass-mode rjsx-mode minitest markdown-mode+ markdown-mode magit haml-mode fill-column-indicator ag)))
+   '(vscode-dark-plus-theme jinja2-mode jq-format dockerfile-mode python-pytest feature-mode terraform-mode elpy scala-mode slim-mode groovy-mode yaml-mode web-mode sass-mode rjsx-mode minitest markdown-mode+ markdown-mode magit haml-mode fill-column-indicator ag)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
