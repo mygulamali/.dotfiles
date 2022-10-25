@@ -121,6 +121,7 @@
  '(display-time-mode t nil (time))
  '(global-hl-line-mode t)
  '(make-backup-files nil)
+ '(neo-window-width 40)
  '(package-selected-packages
    '(neotree vscode-dark-plus-theme jinja2-mode jq-format dockerfile-mode python-pytest feature-mode terraform-mode elpy scala-mode slim-mode groovy-mode yaml-mode web-mode sass-mode rjsx-mode minitest markdown-mode+ markdown-mode magit haml-mode fill-column-indicator ag)))
 (custom-set-faces
@@ -128,4 +129,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(neo-dir-link-face ((t (:foreground "#007acc"))))
+ '(neo-expand-btn-face ((t (:foreground "#cccccc"))))
+ '(vertical-border ((t (:background "#007acc" :foreground "#fafafa")))))
