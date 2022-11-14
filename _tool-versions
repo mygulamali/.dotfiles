@@ -2,3 +2,4 @@ python 3.11.0
 ruby 2.7.6
 nodejs 16.13.1
 golang 1.17.1
+rust 1.65.0
