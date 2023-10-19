@@ -1,23 +1,22 @@
 #!/bin/sh
 
-if [ `dirname $0` != '.' ]; then
-  DOTFILES_DIR=$(find . -name .dotfiles -print -quit 2> /dev/null)
-  cd $DOTFILES_DIR
-fi
+ENTRIES=$(ls -1d _*)
+DEFAULTS_DIR="${PWD}/defaults"
 
-FILES=$(ls -1p | egrep ^_.* | egrep -v /$)
+for ENTRY in $ENTRIES; do
+    DOTFILE="${HOME}/.${ENTRY:1}"
 
-for FILE in $FILES; do
-  DOTFILE=$HOME/.${FILE:1}
-  if [ -s $DOTFILE ]; then
-    if [ -L $DOTFILE ]; then
-      # $DOTFILE exists as a symlink
-      rm $DOTFILE
-    else
-      # $DOTFILE exists as a real file
-      [[ ! -d $PWD/defaults ]] && mkdir -p $PWD/defaults
-      mv $DOTFILE $PWD/defaults/_${FILE:1}
+    # check if dotfile already exists
+    if [ -s "$DOTFILE" ]; then
+        if [ -L "$DOTFILE" ]; then
+            # dotfile exists as a symlink, remove it
+            rm "$DOTFILE"
+        else
+            # dotfile exists as a real file, move it to defaults directory
+            [[ ! -d "$DEFAULTS_DIR" ]] && mkdir -p "$DEFAULTS_DIR"
+            mv "$DOTFILE" "${DEFAULTS_DIR}/_${ENTRY:1}"
+        fi
     fi
-  fi
-  ln -s $PWD/$FILE $DOTFILE
+
+    ln -s "${PWD}/${ENTRY}" "$DOTFILE"
 done
