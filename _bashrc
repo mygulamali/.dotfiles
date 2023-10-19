@@ -1,128 +1,26 @@
-#!/bin/sh
+# .bashrc
 
-# source global definitions
-[[ -f /etc/bashrc ]] && . /etc/bashrc
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
 
-# user specific environment
-if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
-then
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
   PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
 export PATH
 
-# if not running interactively, don't do anything
-[[ -z "$PS1" ]] && return
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
 
-# control history
-shopt -s histappend
-HISTCONTROL=ignoredups:ignorespace
-HISTSIZE=1000
-HISTFILESIZE=2000
-
-# number of threads to use for Intel MKL
-export MKL_NUM_THREADS=1
-
-# the one true editor
-export EDITOR=emacs
-
-# locale settings
-export LC_ALL=$LANG
-
-# aliases
-unalias -a
-alias be='bundle exec'
-alias bitcoin='curl -s https://bitpay.com/api/rates | jq .[3]'
-alias describe='sdcv --color --utf8-output --utf8-input'
-alias e='emacs'
-alias g='git'
-alias gpg='gpg2'
-alias ll='ls -aFhl'
-alias ls='ls -Gp --color=auto'
-alias pingg='ping -c 3 www.google.com'
-alias pr='pipenv run'
-alias psa='ps aux'
-
-# function to pull master and then go back to your current branch
-function pullmaster {
-  current=$(git symbolic-ref HEAD 2> /dev/null) || return
-  git checkout master && git pull && git checkout ${current#refs/heads/}
-}
-
-# function to get current branch if PWD is a git repo
-function parse_git_branch {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-  echo "("${ref#refs/heads/}")"
-}
-
-# function to open Github project page for current repo (hat tip to @sardaukar)
-function gh {
-  url=$(git config -l | grep --color=never "remote.origin.url" | sed -En "s/remote.origin.url=git(@|:\/\/)github.com(:|\/)(.+)\/(.+).git/https:\/\/github.com\/\3\/\4/p")
-  if echo "opening ${url}" | grep http; then
-    open ${url}
-  else
-    echo "no git repo found!"
-    return 1
-  fi
-}
-
-# function to flush DNS cache in Mac OS X (El Capitan)
-function flush_dns {
-  if [ $(uname -s) == 'Darwin' ]; then
-    sudo dscacheutil -flushcache
-    sudo killall -HUP mDNSResponder
-  fi
-}
-
-# command line prompt
-if [ $(tput colors) -ge 8 ]; then
-  BLACK="\[\033[0;30m\]"
-  RED="\[\033[0;31m\]"
-  GREEN="\[\033[0;32m\]"
-  YELLOW="\[\033[0;33m\]"
-  BLUE="\[\033[0;34m\]"
-  MAGENTA="\[\033[0;35m\]"
-  CYAN="\[\033[0;36m\]"
-  WHITE="\[\033[0;37m\]"
-  NORMAL="\[\033[0;0m\]"
-  export PS1="$GREEN[\t] $RED\u@\h $BLUE\W $YELLOW\$(parse_git_branch)$NORMAL\n\\$ "
-else
-  export PS1="[\t] \u@\h \W $(parse_git_branch)\n\\$ "
+# User specific aliases and functions
+if [ -d ~/.bashrc.d ]; then
+	for rc in ~/.bashrc.d/*; do
+		if [ -f "$rc" ]; then
+			. "$rc"
+		fi
+	done
 fi
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
-# ensure /usr/local/bin is always before /usr/bin
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-
-# project directory (used by virtualenvs)
-export PROJECT_DIR="${HOME}/Projects/Personal"
-
-# asdf (https://github.com/asdf-vm/asdf)
-source "$HOME/.asdf/asdf.sh"
-source "$HOME/.asdf/completions/asdf.bash"
-
-# Postgres.app
-[[ -d /Applications/Postgres.app ]] && export PATH=/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH
-
-# Elasticsearch test server
-export TEST_CLUSTER_NODES=1
-
-# git-hooks (https://github.com/icefox/git-hooks)
-[[ -d ${PROJECT_DIR}/git-hooks ]] && export PATH=${PATH}:${PROJECT_DIR}/git-hooks
-
-# autocompletion
-if [ $(uname -s) == 'Darwin' ]; then
-  complete -C aws_completer aws
-  source /usr/local/etc/bash_completion.d/git-completion.bash
-fi
-
-# direnv (https://direnv.net/)
-eval "$(direnv hook bash)"
-
-# added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-# added by travis gem
-[ -f /Users/murtaza/.travis/travis.sh ] && source /Users/murtaza/.travis/travis.sh
+unset rc
