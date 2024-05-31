@@ -82,9 +82,3 @@ export WORKON_HOME="$HOME/.virtualenvs"
 
 ## direnv
 eval "$(direnv hook zsh)"
-
-## BAI helpers
-function beno-init() {
-    . /usr/local/bin/beno-init.sh
-    . /dev/stdin < <(beno-cli auth init)
-}
