@@ -47,11 +47,9 @@
 ;; remove that menu bar
 (menu-bar-mode -1)
 
-;; line numbering, press F3 to toggle
-(require 'linum)
-(global-linum-mode 1)
-(setq linum-format "%4d ")
-(global-set-key [f3] 'linum-mode)
+;; line numbering only in programming modes
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
+(global-set-key [f3] 'display-line-numbers-mode)
 
 ;; default to better frame titles
 (setq frame-title-format
