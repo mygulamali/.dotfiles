@@ -8,7 +8,9 @@ else
 fi
 
 # asdf (https://asdf-vm.com/)
-if [ -d "$HOME/.asdf" ]; then
+if type brew &>/dev/null; then
+  source $(brew --prefix asdf)/libexec/asdf.sh
+elif [ -d "$HOME/.asdf" ]; then
   source "$HOME/.asdf/asdf.sh"
   source "$HOME/.asdf/completions/asdf.bash"
 fi
