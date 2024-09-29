@@ -21,3 +21,7 @@ for ENTRY in $ENTRIES; do
 
   ln -s "${PWD}/${ENTRY}" "$DOTFILE"
 done
+
+cd "${HOME}/.emacs.d/"
+git clone https://github.com/hrs/sensible-defaults.el.git
+emacs -f package-install-selected-packages
