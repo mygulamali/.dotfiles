@@ -121,7 +121,7 @@
  '(make-backup-files nil)
  '(neo-window-width 40)
  '(package-selected-packages
-   '(rust-mode neotree vscode-dark-plus-theme jinja2-mode jq-format dockerfile-mode python-pytest feature-mode terraform-mode elpy scala-mode slim-mode groovy-mode yaml-mode web-mode sass-mode rjsx-mode minitest markdown-mode+ markdown-mode magit haml-mode fill-column-indicator ag)))
+   '(typescript-mode rust-mode neotree vscode-dark-plus-theme jinja2-mode jq-format dockerfile-mode python-pytest feature-mode terraform-mode elpy scala-mode slim-mode groovy-mode yaml-mode web-mode sass-mode rjsx-mode minitest markdown-mode magit haml-mode fill-column-indicator ag)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
