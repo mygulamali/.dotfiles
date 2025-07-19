@@ -70,11 +70,10 @@ export PROJECT_HOME="$HOME/Projects"
 export GPG_TTY=$(tty)
 
 ## asdf (https://asdf-vm.com/)
-if type brew &>/dev/null; then
-  . $(brew --prefix asdf)/libexec/asdf.sh
-elif [ -d "$HOME/.asdf" ]; then
-  . "$HOME/.asdf/asdf.sh"
-  . "$HOME/.asdf/completions/asdf.bash"
+if [ -d "$HOME/.asdf" ]; then
+  export PATH="$HOME/.asdf/shims:$PATH"
+  fpath=("$HOME/.asdf/completions" $fpath)
+  autoload -Uz compinit && compinit
 fi
 
 ## virtualenvwrapper
