@@ -69,19 +69,11 @@ export PROJECT_HOME="$HOME/Projects"
 ## GPG uses current terminal to sign commits
 export GPG_TTY=$(tty)
 
-## asdf (https://asdf-vm.com/)
-if [ -d "$HOME/.asdf" ]; then
-  export PATH="$HOME/.asdf/shims:$PATH"
-  fpath=("$HOME/.asdf/completions" $fpath)
-  autoload -Uz compinit && compinit
-fi
-
-## virtualenvwrapper
-export WORKON_HOME="$HOME/.virtualenvs"
-. "$(asdf where python)/bin/virtualenvwrapper.sh"
-
 ## direnv
 eval "$(direnv hook zsh)"
+
+# mise-en-place
+eval "$(mise activate zsh)"
 
 # bun
 if [ -s "$HOME/.bun/_bun" ]; then
@@ -90,9 +82,6 @@ if [ -s "$HOME/.bun/_bun" ]; then
   export BUN_INSTALL="$HOME/.bun"
   export PATH="$BUN_INSTALL/bin:$PATH"
 fi
-
-# Java
-. "$HOME/.asdf/plugins/java/set-java-home.zsh"
 
 # Android
 export ANDROID_HOME=$HOME/Library/Android/sdk
