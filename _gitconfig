@@ -16,13 +16,24 @@
     ui = on
 [alias]
     a = add
+    assume   = update-index --assume-unchanged
+    assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
     c = commit
     l = log -10 --pretty=tformat:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --
+    r = "!f() { \
+        feature_branch=$(git rev-parse --abbrev-ref HEAD); \
+        if [ \"$feature_branch\" = \"main\" ]; then \
+            echo \"You are already on the main branch. Please switch to a feature branch.\"; \
+            return 1; \
+        fi; \
+        git checkout main && \
+        git pull origin main && \
+        git checkout \"$feature_branch\" && \
+        git rebase main; \
+    }; f"
     s = status -s -b
-    assume   = update-index --assume-unchanged
     unassume = update-index --no-assume-unchanged
-    assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
 [credential]
     helper = cache --timeout=3600
 [filter "media"]
